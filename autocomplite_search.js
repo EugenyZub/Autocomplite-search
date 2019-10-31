@@ -1,4 +1,4 @@
-let countries = ["Австралия", "Австрия", "Азербайджан", "Албания", "Алжир", "Ангола", "Андорра", 
+const countries = ["Австралия", "Австрия", "Азербайджан", "Албания", "Алжир", "Ангола", "Андорра", 
                  "Антигуа и Барбуда", "Антильские острова", "Аргентина", "Армения", "Афганистан", 
                  "Багамские острова", "Бангладеш", "Барбадос", "Бахрейн", "Белиз", "Беларусь", 
                  "Бельгия", "Бенин", "Болгария", "Боливия", "Босния и Герцеговина", "Ботсвана", 
@@ -26,18 +26,18 @@ let countries = ["Австралия", "Австрия", "Азербайджан
                  "Уганда", "Узбекистан", "Украина", "Уругвай", "Фиджи", "Филиппины", "Финляндия", "Франция", 
                  "Французская Гвиана", "Хорватия", "Центральноафриканская Республика", "Чад", "Черногория", 
                  "Чехия", "Чили", "Швейцария", "Швеция", "Шри-Ланка", "Эквадор", "Экваториальная Гвинея", 
-                 "Эритрея", "Эстония", "Эфиопия", "ЮАР", "Ямайка", "Япония"];
+                 "Эритрея", "Эстония", "Эфиопия", "ЮАР", "Ямайка", "Япония"],
 
-let country = document.querySelector('#country');
-let countriesList = document.querySelector('#list');
+country = document.querySelector('#country'),
+countriesList = document.querySelector('#list');
 
 country.addEventListener('input', () => {
   removeChildren(countriesList);
-  let curentEnter = toUpperCase(country.value);
-  let newArr = filterItems(curentEnter);
+  const curentEnter = toUpperCase(country.value),
+        newArr = filterItems(curentEnter);
   
   for (let i = 0; i < newArr.length; i++)  {  
-    let newLi = document.createElement('li');
+    const newLi = document.createElement('li');
     
     //Вывод списка только при вводе более двух символов
     if( curentEnter.length >= 2) {
