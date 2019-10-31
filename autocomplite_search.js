@@ -31,7 +31,7 @@ let countries = ["Австралия", "Австрия", "Азербайджан
 let country = document.querySelector('#country');
 let countriesList = document.querySelector('#list');
 
-country.addEventListener('input', function() {
+country.addEventListener('input', () => {
   removeChildren(countriesList);
   let curentEnter = toUpperCase(country.value);
   let newArr = filterItems(curentEnter);
@@ -44,7 +44,7 @@ country.addEventListener('input', function() {
       newLi.textContent = newArr[i];
       list.appendChild(newLi); 
       
-      newLi.addEventListener('click', function() {
+      newLi.addEventListener('click', () => {
           country.value = newLi.textContent;
           removeChildren(countriesList); 
       });
@@ -54,7 +54,7 @@ country.addEventListener('input', function() {
 
 //Ищем подходящие элементы в массиве 
 function filterItems(filter) {
-  return countries.filter(function(el) {
+  return countries.filter((el) => {
       return el.includes(filter);
   })
 }
